@@ -1,0 +1,43 @@
+1. Module Pemesanan
+Customer melakukan pemesanan dengan scan barcode dan diarahkan langsung ke website pemesanan
+a. Metode pemesanan langsung 
+    Customer datang langsung ke tempat
+    - Pilih menu : makanan, minuman
+    - Pilih pembayaran : cash, debit, dompet digital, transfer bank, qris
+    - Generate no pemesanan : nama pemesan, menu yang dipesan dan metode pembayaran
+    - Struk pembayaran
+
+b. Metode pemesanan take away (online) optional
+    Customer melakukan pemesanan melalui website
+    - Pilih menu : makanan, minuman
+    - Pilih pembayaran :   dompet digital, transfer bank
+    - Generate no pemesanan : nama pemesan, menu yang dipesan dan metode pembayaran
+    - Struk pembayaran
+
+2. Module Menu
+    Menampilkan semua menu yang ada di cafe
+    - Makanan : Category makanan disesuaikan dengan kebutuhan
+    - Minuman : Category minuman disesuaikan dengan kebutuhan
+    - Other
+
+3. Module Stok 
+    Untuk mengatur kebutuhan stok dari setiap menu yang ada
+
+4. Module report
+    Untuk struk transaksi, monthly report, weekly report dan daily report
+
+5. Module Karyawan
+    Menampung data Karyawan
+
+6. Module Auth
+    Menampung data login
+
+7. Module transaksi 
+    Menampung semua data transaksi, dan mengatur potongan harga kalau ada diskon
+
+8. Module log penjualan
+    Melihat riwayat penjualan
+
+9. Module Finance
+    Penggajihan karyawan, absensi karyawan
+    
