@@ -23,6 +23,19 @@
         <link rel="stylesheet" type="text/css" href="/plugins/table/datatable/dt-global_style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <script src="https://unpkg.com/feather-icons"></script>
+        <link href="/assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="/plugins/select2/select2.min.css">
+        <link href="/plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
+        {{-- <link href="/plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css"> --}}
+        <script src="/plugins/flatpickr/flatpickr.js"></script>
+        {{-- <link href="/plugins/file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css" /> --}}
+        {{-- <script src="/plugins/file-upload/file-upload-with-preview.min.js"></script> --}}
+        <link href="/plugins/animate/animate.css" rel="stylesheet" type="text/css" />
+        <script src="/plugins/sweetalerts/promise-polyfill.js"></script>
+        <link href="/plugins/sweetalerts/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+        <link href="/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="/modules/employees/css/custom.css">
         <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
     </head>
@@ -89,6 +102,8 @@
         <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
         <script src="/plugins/apex/apexcharts.min.js"></script>
         <script src="/assets/js/dashboard/dash_1.js"></script>
+        <script src="/plugins/select2/select2.min.js"></script>
+        <script src="/plugins/sweetalerts/sweetalert2.min.js"></script>
         <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
     </body>

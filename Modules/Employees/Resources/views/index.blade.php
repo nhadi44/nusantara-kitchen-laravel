@@ -2,7 +2,14 @@
 @section('title', 'Data Employees')
 @section('content')
     <div class="col-xl-12 col-lg-12 col-sm-12 col-12 layout">
+        <div class="widget-content widget-content-area br-6 mb-3">
+            <h4 class="text-capitalize">Employee Data Table</h4>
+        </div>
         <div class="widget-content widget-content-area br-6">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addEmployeeModal">
+                <i class="fas fa-plus"></i>
+                Add Employee
+            </button>
             <div class="table-responsive mb-4 mt-4">
                 <table class="table table-hover" id="employeeTable" style="width: 100%">
                     <thead>
@@ -75,5 +82,18 @@
             </div>
         </div>
     </div>
-    <script src="/modules/employees/datatable.js"></script>
+    <x-modal-component :modalId="'addEmployeeModal'" :modalTitle="'Form Employee'" :modalSize="'modal-lg'" :modalBg="'bg-primary'" :formId="'addEmployeeForm'">
+        <x-slot:modalBody>
+            <x-form-employee-component />
+        </x-slot:modalBody>
+        <x-slot:modalFooter>
+            <button type="button" class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </x-slot:modalFooter>
+    </x-modal-component>
+    <script src="/modules/employees/js/datatable.js"></script>
+    <script src="/modules/employees/js/custom-select2.js"></script>
+    <script src="/modules/employees/js/custom-flatpickr.js"></script>
+    <script src="/modules/employees/js/process-add-employee.js"></script>
+    <script src="/modules/employees/js/image-preview.js"></script>
 @endsection
