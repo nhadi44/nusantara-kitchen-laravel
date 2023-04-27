@@ -1,5 +1,15 @@
 <?php
 
+/*
+ * This file is part of Your Project.
+ *
+ * (c) Hadi Nurhidayat <hadinurhidayat97@hotmail.com>
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
+
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
@@ -20,7 +30,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands(): void
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
