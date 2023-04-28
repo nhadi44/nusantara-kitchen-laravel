@@ -25,7 +25,26 @@ $("#addEmployeeForm").submit(function (e) {
         contentType: false,
         processData: false,
         success: function (response) {
-            console.log("success", response);
+            swal({
+                type: "success",
+                title: "Success",
+                text: "Employee has been added",
+            }).then(function () {
+                // hide modal
+                $("#addEmployeeModal").modal("hide");
+                // reset form
+                $("#addEmployeeForm")[0].reset();
+                // reset select2
+                $("#gender").val(null).trigger("change");
+                $("#religion").val(null).trigger("change");
+                $("#status").val(null).trigger("change");
+                // reset image preview
+                const previewImage = document.querySelector(".preview-image");
+                const imageLabel = document.querySelector(".custom-file-label");
+                previewContainer.removeChild(previewImage);
+                imageLabel.textContent = "Choose file";
+                uploadInput.value = "";
+            });
         },
         error: function (response) {
             if (response.status === 422) {
@@ -102,6 +121,12 @@ $("#addEmployeeForm").submit(function (e) {
                     text: "Field must be filled",
                 });
             }
+
+            swal({
+                type: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+            });
         },
     });
 });

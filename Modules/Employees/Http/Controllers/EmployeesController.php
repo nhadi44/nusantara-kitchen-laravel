@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
 use Modules\Employees\Repositories\Interfaces\EmployeeRepositoryInterfaces;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class EmployeesController extends Controller
 {
@@ -31,7 +32,7 @@ class EmployeesController extends Controller
             'gender' => 'required',
             'religion' => 'required',
             'employee_id' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:employees',
             'phone_number' => 'required',
             'address' => 'required',
             'start_date' => 'required',
@@ -47,9 +48,44 @@ class EmployeesController extends Controller
             ], 422);
         }
 
-        return response()->json([
-            'message' => 'Successfully',
-            'request' => $request->all()
-        ]);
+        $fileName = $request->file('image_upload')->getClientOriginalName();
+
+        try {
+            //code...
+
+            // compress image
+            $image = Image::make($request->file('image_upload')->getRealPath());
+            $image->resize(300, 300, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save(storage_path('app/public/employees/' . $fileName));
+
+
+            $employee = $this->employeeRepository->store([
+                'first_name' => request('first_name'),
+                'last_name' => request('last_name'),
+                'employee_id' => request('employee_id'),
+                'email' => request('email'),
+                'phone' => request('phone_number'),
+                'address' => request('address'),
+                'gender' => request('gender'),
+                'date_of_birth' => request('date_of_birth'),
+                'religion' => request('religion'),
+                'start_date' => request('start_date'),
+                'end_date' => request('end_date'),
+                'position' => request('position'),
+                'status' => request('status'),
+                'photo' => $fileName,
+                'position' => request('position'),
+            ]);
+
+            return response()->json([
+                'message' => 'Successfully',
+            ], 201);
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json([
+                'message' => $th->getMessage(),
+            ], 500);
+        }
     }
 }
