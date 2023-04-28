@@ -82,14 +82,16 @@
             </div>
         </div>
     </div>
-    <x-modal-component :modalId="'addEmployeeModal'" :modalTitle="'Form Employee'" :modalSize="'modal-lg'" :modalBg="'bg-primary'" :formId="'addEmployeeForm'">
-        <x-slot:modalBody>
-            <x-form-employee-component />
-        </x-slot:modalBody>
-        <x-slot:modalFooter>
-            <button type="button" class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
-            <button type="submit" class="btn btn-primary">Save</button>
-        </x-slot:modalFooter>
+    <x-modal-component :modalId="'addEmployeeModal'" :modalTitle="'Form Employee'" :modalSize="'modal-lg'" :modalBg="'bg-primary'">
+        <form id="addEmployeeForm" enctype="multipart/form-data">
+            @csrf
+            <div class="modal-body">
+                <x-form-employee-component />
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+        </form>
     </x-modal-component>
     <script src="/modules/employees/js/datatable.js"></script>
     <script src="/modules/employees/js/custom-select2.js"></script>

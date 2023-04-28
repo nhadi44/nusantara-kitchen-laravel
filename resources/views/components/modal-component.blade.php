@@ -8,14 +8,7 @@
                     <x-feathericon-x class="w-6 h-6" />
                 </button>
             </div>
-            <form id="{{ $formId }}">
-                <div class="modal-body">
-                    {{ $modalBody }}
-                </div>
-                <div class="modal-footer">
-                    {{ $modalFooter }}
-                </div>
-            </form>
+            {{ $slot }}
         </div>
     </div>
 </div>

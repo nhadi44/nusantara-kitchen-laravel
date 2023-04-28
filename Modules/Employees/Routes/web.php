@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 use Modules\Employees\Http\Controllers\EmployeesController;
 
 Route::get('/employees', [EmployeesController::class, 'index'])->name('employees.index');
+Route::post('/employees', [EmployeesController::class, 'store'])->name('employees.store');

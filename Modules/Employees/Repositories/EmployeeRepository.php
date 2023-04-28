@@ -9,4 +9,9 @@ class EmployeeRepository implements EmployeeRepositoryInterfaces
     public function index()
     {
     }
+
+    public function store($request)
+    {
+        
+    }
 }

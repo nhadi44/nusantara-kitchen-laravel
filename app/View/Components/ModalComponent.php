@@ -21,13 +21,12 @@ class ModalComponent extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($modalId, $modalTitle, $modalSize, $modalBg, $formId)
+    public function __construct($modalId, $modalTitle, $modalSize, $modalBg,)
     {
         $this->modalId = $modalId;
         $this->modalTitle = $modalTitle;
         $this->modalSize = $modalSize;
         $this->modalBg = $modalBg;
-        $this->formId = $formId;
     }
 
     /**
@@ -40,7 +39,6 @@ class ModalComponent extends Component
             'modalTitle' => $this->modalTitle,
             'modalSize' => $this->modalSize,
             'modalBg' => $this->modalBg,
-            'formId' => $this->formId,
         ]);
     }
 }

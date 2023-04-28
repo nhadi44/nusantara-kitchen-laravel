@@ -63,6 +63,14 @@
         Email is required
     </div>
 </div>
+<div class="form-group">
+    <label for="phone_number" class="form-label">Phone Number</label>
+    <input type="number" class="form-control" name="phone_number" id="phone_number" placeholder="Phone Number">
+</div>
+<div class="form-group">
+    <label for="address" class="form-label">Address</label>
+    <textarea name="address" id="address" cols="30" rows="3" class="form-control" placeholder="Address"></textarea>
+</div>
 <div class="row">
     <div class="col-md-6 form-group">
         <label for="start_date" class="form-label">Start Date</label>
@@ -103,24 +111,15 @@
     </div>
 </div>
 <div class="form-group">
-    {{-- <div class="custom-file-container" data-upload-id="myFirstImage">
-        <label>Upload Photo<a href="javascript:void(0)"
-                class="btn btn-danger ml-2 px-2 py-1 custom-file-container__image-clear"
-                title="Clear Image">x</a></label>
-        <label class="custom-file-container__custom-file">
-            <input name="photo" id="photo" type="file"
-                class="custom-file-container__custom-file__custom-file-input" accept="image/*">
-            <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-            <span class="custom-file-container__custom-file__custom-file-control"></span>
-        </label>
-        <div class="custom-file-container__image-preview"></div>
-    </div> --}}
     <div class="upload-form mb-2">
         <label for="image-upload" class="upload-label">Photo</label>
         <div class="custom-file mb-3">
-            <input id="image-upload" class="custom-file-input" type="file" accept="image/*" name="photo">
+            <input name="image_upload" id="image-upload" class="custom-file-input" type="file" accept="image/*">
             <label class="custom-file-label" for="image-upload">Choose file</label>
         </div>
+        <small class="text-danger" style="font-size: 13px" id="feedbackInvalidPhoto">
+            Photo is required
+        </small>
         <div id="preview-container" class="preview-container"></div>
         <button type="button" class="btn btn-danger mt-2" id="remove_image">Remove Image</button>
     </div>
